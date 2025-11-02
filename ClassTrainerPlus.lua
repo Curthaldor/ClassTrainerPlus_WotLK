@@ -104,8 +104,9 @@ local function TrainerUpdateHandler()
 end
 
 local function UpdateUserFilters()
-	ctp.TrainerServices:Update()
+	-- Only update if the trainer frame is actually open and visible
 	if (ClassTrainerPlusFrame and ClassTrainerPlusFrame:IsVisible()) then
+		ctp.TrainerServices:Update()
 		ClassTrainerPlusFrame_Update()
 	end
 end
